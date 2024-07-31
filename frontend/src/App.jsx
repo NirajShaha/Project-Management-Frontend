@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Button } from './components/ui/button'
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Home from './pages/Home/Home';
+import Navbar from './pages/Navbar/Navbar';
 
 function App() {
 
   return (
     <>
-      <Button>Shad cn button</Button>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </>
   )
 }
 
-export default App
+export default App;
