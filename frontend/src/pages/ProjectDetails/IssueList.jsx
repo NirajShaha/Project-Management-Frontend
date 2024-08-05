@@ -10,7 +10,7 @@ const IssueList = ({title, status}) => {
   return (
     <div>
         <Dialog>
-            <Card className="w-full md:w-[300px] lg:w-[260px]">
+            <Card className="w-full md:w-[260px] lg:w-[260px]">
                 <CardHeader>
                     <CardTitle>
                         {title}
@@ -18,7 +18,7 @@ const IssueList = ({title, status}) => {
                 </CardHeader>
                 <CardContent className="px-2">
                     <div className="space-y-2">
-                        <IssueCard />
+                        {[1,1,1].map((item)=><IssueCard key={item} />)}
                     </div>
                 </CardContent>
                 <CardFooter>

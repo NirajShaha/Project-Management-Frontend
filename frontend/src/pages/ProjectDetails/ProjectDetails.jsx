@@ -24,8 +24,7 @@ export default function ProjectDetails() {
                         </h1>
                         <div className='space-y-5 pb-10'>
                         <p className='w-full md:max-w-lg lg:max-w-xl text-sm'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </p>
                         <div className='flex'>
                             <p className='w-36'>Project Lead : </p>
@@ -71,7 +70,7 @@ export default function ProjectDetails() {
                         </div>
 
                         <section>
-                            <p className='py-5 border-b text-lg -tracking-wider'>Tasks</p>
+                            <p className='py-1 border-b text-lg -tracking-wider'>Tasks</p>
                             <div className='lg:flex md:flex gap-3 justify-between py-5'>
                                 <IssueList status="pending" title="Todo List" />
                                 <IssueList status="in_progress" title="In progress" />
