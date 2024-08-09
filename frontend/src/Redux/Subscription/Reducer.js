@@ -1,6 +1,4 @@
-import { error } from "console";
 import * as actionTypes from "./ActionTypes";
-import { nullable } from "zod";
 
 const initialState = {
   userSubscription: null,

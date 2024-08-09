@@ -1,3 +1,4 @@
+import api from "@/config/api";
 import {
   ACCEPT_INVITATION_REQUEST,
   ACCEPT_INVITATION_SUCCESS,
@@ -45,7 +46,7 @@ export const createProjects = (projectData) => async (dispatch) => {
   dispatch({ type: CREATE_PROJECTS_REQUEST });
   try {
     const { data } = await api.post("/api/projects", projectData);
-    console.log("create projects", data);
+    console.log("create projects", projectData);
     dispatch({ type: CREATE_PROJECTS_SUCCESS, projects: data });
   } catch (error) {
     console.log(error);

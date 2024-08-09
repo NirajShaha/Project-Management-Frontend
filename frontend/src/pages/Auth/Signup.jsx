@@ -1,9 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { register } from "@/Redux/Auth/Action";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 
 const Signup = () => {
+
+  const dispatch = useDispatch();
   const form = useForm({
     // resolver:
     defaultValues: {
@@ -12,6 +16,7 @@ const Signup = () => {
   });
 
   const onSubmit = (data) => {
+    dispatch(register(data));
     console.log("Create project data: ", data);
   };
 

@@ -15,11 +15,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { createProjects } from "@/Redux/Project/Action";
 import { Cross1Icon } from "@radix-ui/react-icons";
 
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 
 export default function CreateProjectForm() {
+  const dispatch = useDispatch();
+
   const tags = [
     "all",
     "react",
@@ -53,8 +57,10 @@ export default function CreateProjectForm() {
   };
 
   const onSubmit = (data) => {
+    dispatch(createProjects(data));
     console.log("Create project data: ", data);
   };
+
   return (
     <div>
       <Form {...form}>

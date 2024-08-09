@@ -2,7 +2,9 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import CreateProjectForm from "../Project/CreateProjectForm";
@@ -15,9 +17,17 @@ import {
 
 import { PersonIcon } from "@radix-ui/react-icons";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "@/Redux/Auth/Action";
 
 export default function Navbar() {
+  const { auth } = useSelector((store) => store);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  }
 
   return (
     <div className="border-b py-4 px-5 flex items-center justify-between">
@@ -30,9 +40,11 @@ export default function Navbar() {
             <Button variant="ghost">New Project</Button>
           </DialogTrigger>
           <DialogContent>
+            <DialogTitle />
             <DialogHeader>Create New Project</DialogHeader>
             <CreateProjectForm />
           </DialogContent>
+          <DialogDescription />
         </Dialog>
         <Button onClick={()=>navigate("/upgrade_plan")} variant="ghost">Upgrade</Button>
       </div>
@@ -48,10 +60,10 @@ export default function Navbar() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem>Logout</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <p>Niraj Shaha</p>
+        <p>{auth.user.fullName}</p>
       </div>
     </div>
   );

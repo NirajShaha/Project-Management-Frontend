@@ -16,4 +16,4 @@ const rootReducer = combineReducers({
   subscription: subscriptionReducer
 });
 
-export const Store = legacy_createStore(rootReducer, applyMiddleware(thunk));
+export const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
